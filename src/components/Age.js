@@ -6,29 +6,33 @@ function Age() {
     var m1 = document.getElementById('month').value;
     var y1 = document.getElementById('year').value;
     var date = new Date();
-    // console.log(date)
+ 
     var d2 = date.getDate();
-    console.log(d2)
+    
     var m2 = 1+date.getMonth();
-    console.log(m2)
+   
     var y2 = date.getFullYear();
+                                                                                                                                                                                      
     var month = [31,28,31,30,31,30,31,31,30,31,30,31];
     
     if(d1>d2){
-     d2 = d2 + month[m2 - 1];                                                                                                                                                                                           
+     d2 = d2 + month[m2 - 1]; 
      m2 = m2 - 1;
     }
-    if(m1>m2){
+    else if(m1>m2){
       m2 = m2 + 12;
+      console.log(m2);
       y2 = y2 - 1;
     }
+
     var d = d2 - d1;
     var m = m2 - m1;
     var y = y2 - y1;
-    document.getElementById('age').innerHTML = ` "Your age is " ${y} " Years " ${m} " Months " ${d} " Days " `;
+    document.getElementById('age').innerHTML = ` "Your age is " ${y} " Years " ${m} " Months " ${d} " Days"🎂`;
  
   }
   return (
+   
     <div className="container">
       <form>
         <div className="base">
@@ -36,11 +40,8 @@ function Age() {
             <h4>Age Calculator</h4>
           </div>
           <div className="block">
-            <p className="title">Date
-
-            </p>
+            <p className="title">Date</p>
             <input type="text" name="date" id="date" placeholder="dd" required="required" minLength="1" maxLength="2"></input>
-
           </div>
           <div className="block">
           <p className="title">Month</p>
@@ -59,7 +60,7 @@ function Age() {
         <div id="age"></div>
       </form>
     
-    </div>
+    </div> 
   );
 }
 

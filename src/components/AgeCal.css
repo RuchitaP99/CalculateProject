@@ -12,31 +12,25 @@ body{
 
   .container{
     width: 520px;
-    height: auto;
-    margin: 100px auto;
+    height: 420px;
+    margin-left:35%;
+    margin-top: 12%;
     background-color: paleturquoise;
     border-radius: 25px;
    
   }
 
+  .enter{
+    margin-Top: 80px;
+  }
   .enter h3{
+    margin-top: 40px;
     margin-left: 30%;
     font-size: 30px;
     color:#003669;
   }
 
-  
-  .base hd{
-    font-size: 26px;
-    text-align: center;
-    font-family: sans-serif;
-    font-weight: normal;
-    margin-top: 0px;
-    box-shadow: 0px 2px #bababa;
-    background: white;
-    font-size: 34px;
-    color: navy;
-  }
+
 
   .block{
     width: 135px;
@@ -45,9 +39,10 @@ body{
     display: inline-block;
     
   }
+  
 
   .title{
-    font-size: 20px;
+    font-size: 25px;
     text-align: left;
     font-family: sans-serif;
     font-weight: normal;
@@ -58,9 +53,29 @@ body{
   }
 
   .btn{
-      margin-left: 220px;
+      
+      margin-left: 150px;
+      margin-top: 30px;
+      
+      
   }
 
   .app{
-      margin-left: 200px;
+      margin-left: 170px;
+  }
+
+  .box{
+      margin-right: 20px;
+  }
+
+  @media screen and (max-width: 860px){
+    .container{
+      width: 520px;
+      height: 420px;
+      margin-left:16%;
+      margin-top: 12%;
+      background-color: paleturquoise;
+      border-radius: 25px;
+     
+    }
   }

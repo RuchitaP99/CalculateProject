@@ -13,7 +13,7 @@ function generateArray(start,end){
  //1-31
  const days = generateArray(1,31);
  //1900-today
- const years = generateArray(1900,(new Date).getFullYear());
+ const years = generateArray(1900,(new Date()).getFullYear());
  
  //calculate age
  function calculateAge(birthday){
@@ -43,7 +43,7 @@ function generateArray(start,end){
        day : 25,
        month : 'Dec',
        year :  1998,
-       age: '20 years 11 months 28 days'
+       age: '20 years 11 months 28 days🎂'
      };
      
      this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,7 +63,7 @@ function generateArray(start,end){
        month: e.target.value 
      });
    }
- 
+
    handleYearChange(e){
      this.setState({
        year: e.target.value 
@@ -89,12 +89,12 @@ function generateArray(start,end){
  
      return <div className = "container">
          <div className="enter">
-       <h3>Age Calculator</h3>
+       <h3 style={{paddingTop:"30px"}}>Age Calculator</h3>
        </div>
        <form onSubmit = {this.handleSubmit}>
          <div className="block">
          <p className="title">Date</p>
-           <Input arr = {days} handleChange = {this.handleDayChange} val = {this.state.day} />
+           <Input style={{padding:"30px"}} arr = {days} handleChange = {this.handleDayChange} val = {this.state.day} />
         </div>
 
         <div className="block">
@@ -108,31 +108,31 @@ function generateArray(start,end){
         </div>
     
         <div className="btn">
-         <button type="submit">Calculate</button>
+         <button style={{padding:"10px",width:"200px", fontSize:"20px", borderRadius:"10px",border:"none", cursor:"pointer"}} type="submit">Calculate</button>
         </div>
          
        </form>
     
        <article className="app">
-         <h2>Your age is</h2>
+         <h2 style={{fontSize:"30px"}}>Your Age is</h2>
+         </article>
+         <div className="footer" style={{fontSize:"20px", marginLeft:"27%"}}>
           <span>{this.state.age}</span>
-       </article>
-       {/* <footer>Made with <a href="https://reactjs.org/" target="_blank" >ReactJS</a>
-       </footer> */}
+          </div>
+       
      </div>;
    }
- 
  }
  
  function Input(props){
    let options = props.arr.map((item)=> <option value={item} key={item}>{item}</option>);
                                
-    return  <select onChange = {props.handleChange} value={props.val}>
+    return  <select style={{padding:"6px",width:"100px",fontSize:"20px"}} onChange = {props.handleChange} value={props.val}>
                 {options}
              </select>;
     }
  
  export default AgeCalculator
  
-//  ReactDOM.render(<AgeCalculator />,document.getElementById('root'));
+
  
