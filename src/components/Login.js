@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// import ReactDOM from "react-dom";
+
 import './Login.css'
-import Age from "./Age";
+import Info from "./Home/Info";
 
 
 
@@ -54,24 +54,23 @@ function Login() {
       <div className="error">{errorMessages.message}</div>
     );
 
-
   const renderForm = (
     <div className="form">
-         <label style={{marginLeft:"30%", fontSize:"26px",border:"3px dotted Lightblue"}}>Login</label>
+         <label style={{marginLeft:"10%", fontSize:"26px",border:"3px dotted Lightblue"}}>Login</label>
       <form onSubmit={handleSubmit}>
          
         <div className="input-container">
           <label>Username </label>
-          <input style={{width:"180px"}} type="text" name="uname" required />
+          <input type="username" name="uname" required />
           {renderErrorMessage("uname")}
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required  style={{height:"50px"}} />
+          <input type="password" name="pass" required />
           {renderErrorMessage("pass")}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" value="submit"/>
         </div>
       </form>
     </div>
@@ -81,7 +80,7 @@ function Login() {
     <div className="app">
       <div className="login-form">
         <div className="title"></div>
-        {isSubmitted ? <Age/> : renderForm}
+        {isSubmitted ? <Info /> : renderForm}
       </div>
     </div>
   );

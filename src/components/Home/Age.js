@@ -1,7 +1,15 @@
 import './Age.css';
 
+import {Link} from 'react-router-dom'
+import {useSelector} from 'react-redux'
+
 function Age() {
+  const data =    useSelector((state) =>
+    state.reducer.list
+  )
+  console.log(data)
   function age(){
+   
     var d1 = document.getElementById('date').value;
     var m1 = document.getElementById('month').value;
     var y1 = document.getElementById('year').value;
@@ -19,7 +27,7 @@ function Age() {
      d2 = d2 + month[m2 - 1]; 
      m2 = m2 - 1;
     }
-    else if(m1>m2){
+    if(m1>m2){
       m2 = m2 + 12;
       console.log(m2);
       y2 = y2 - 1;
@@ -28,9 +36,11 @@ function Age() {
     var d = d2 - d1;
     var m = m2 - m1;
     var y = y2 - y1;
-    document.getElementById('age').innerHTML = ` "Your age is " ${y} " Years " ${m} " Months " ${d} " Days"🎂`;
+    document.getElementById('age').innerHTML = ` "Your age is " ${y} " Years " ${m} " Months " ${d} " Days"🎂 `;
  
   }
+
+
   return (
    
     <div className="container">
@@ -38,7 +48,10 @@ function Age() {
         <div className="base">
           <div className="enter">
             <h4>Age Calculator</h4>
+        
           </div>
+          {/* <h2>{data}</h2> */}
+         
           <div className="block">
             <p className="title">Date</p>
             <input type="text" name="date" id="date" placeholder="dd" required="required" minLength="1" maxLength="2"></input>
@@ -55,11 +68,11 @@ function Age() {
         <div className="base">
           <div className="enter">
             <input type="button" name="submit" value="Submit" onClick={age}></input>
+            <Link to='/home'> <input type="button" name="close" value="Close" ></input></Link>
           </div>
         </div>
         <div id="age"></div>
       </form>
-    
     </div> 
   );
 }
